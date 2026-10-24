@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>好きなもの｜暮らし方</title>
+<meta name="description" content="安いものではなく、自分に合って気持ちよく使えるものを。デジタル環境、道具、身につけるもの、楽しみを支えるサービス。減らすのではなく使い切るための個人的なノート。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#191715; --muted:#73706a; --faint:#a8a49c;
+    --line:#e5e2db; --card:#f3f1ec; --accent:#5f8f74;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#100f0e; --ink:#efece7; --muted:#918c84; --faint:#5c5852;
+      --line:#262421; --card:#181614; --accent:#8cbfa4;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#100f0e; --ink:#efece7; --muted:#918c84; --faint:#5c5852;
+    --line:#262421; --card:#181614; --accent:#8cbfa4;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;
+    font-size:16px;line-height:1.95;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:48rem;margin:0 auto;padding:0 16px}
+  @media (min-width:640px){.wrap{padding:0 28px}}
+
+  .top{padding:24px 0 0}
+  .back{font-size:.75rem;letter-spacing:.1em;color:var(--muted);text-decoration:none}
+  .back:hover{color:var(--ink)}
+
+  header.hero{padding:72px 0 24px}
+  .eyebrow{font-size:.7rem;letter-spacing:.24em;color:var(--accent);margin:0 0 14px}
+  h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(2rem,6vw,2.8rem);line-height:1.4;margin:0 0 6px;letter-spacing:.04em}
+  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;letter-spacing:.02em;margin:.1em 0 1.1em;opacity:.85}
+  .lead{color:var(--muted);margin:0;max-width:34em}
+
+  .toc{list-style:none;margin:30px 0 0;padding:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;
+    border-top:1px solid var(--line)}
+  .toc a{font-size:.8rem;color:var(--muted);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+
+  section{padding:56px 0 0}
+  .sec-n{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--faint);margin-bottom:8px}
+  h2{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.3rem;letter-spacing:.04em;margin:0 0 6px}
+  h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1rem;margin:28px 0 6px}
+  .pull{font-family:"Noto Serif JP",serif;font-weight:500;font-size:1.05rem;line-height:1.8;margin:.2em 0 1em;opacity:.85}
+  .note{color:var(--faint);font-size:.82rem;margin:0 0 22px}
+  p{margin:0 0 14px}
+
+  .points{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+  .points li{padding:14px 18px;background:var(--card);border-radius:3px;font-size:.95rem}
+  .points b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;margin-bottom:2px}
+  .points span{color:var(--muted);font-size:.9rem}
+
+  .two{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0}
+  @media (min-width:640px){.two{grid-template-columns:1fr 1fr}}
+  .two div{padding:16px 18px;border:1px solid var(--line);border-radius:3px}
+  .two b{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--accent);margin-bottom:8px}
+  .two ul{margin:0;padding-left:1.1em;font-size:.9rem;color:var(--muted)}
+  .two li{margin:0 0 5px}
+
+  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:20px 0 0;font-size:.86rem;color:var(--muted)}
+  .flow span{padding:7px 13px;background:var(--card);border-radius:3px}
+  .flow i{font-style:normal;color:var(--faint)}
+  .flow .key{color:var(--ink);box-shadow:inset 0 0 0 1px var(--accent)}
+
+  .todo{margin:16px 0 0;padding:16px 18px;border:1px dashed var(--line);border-radius:3px;
+    color:var(--faint);font-size:.86rem;line-height:1.85}
+  .todo b{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--accent);margin-bottom:6px;font-weight:700}
+
+  .open ul{margin:14px 0 0;padding-left:1.2em;color:var(--muted);font-size:.92rem}
+  .open li{margin:0 0 7px}
+
+  .src{display:grid;border-top:1px solid var(--line);margin-top:12px}
+  .src a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-size:.92rem}
+  .src a:hover{color:var(--accent)}
+  .src small{color:var(--faint);font-size:.76rem;letter-spacing:.06em;white-space:nowrap}
+
+  .tl{margin-top:18px;font-size:.9rem;color:var(--muted)}
+  .tl a{color:var(--accent)}
+
+  footer{margin:88px 0 0;padding:28px 0 64px;border-top:1px solid var(--line)}
+  footer p{font-size:.78rem;color:var(--faint);line-height:1.85;margin:0 0 12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="back" href="../way-of-living/">← 暮らし方</a></div>
+
+  <header class="hero">
+    <p class="eyebrow">FAVORITES</p>
+    <h1>好きなもの</h1>
+    <p class="mn-tagline">安いものではなく、自分に合って気持ちよく使えるものを。</p>
+    <p class="lead">いま使っていて気に入っているものとサービス。住む・着る・食べるのどれか一つに収まらないものを、ここにまとめています。持ち物の自慢ではなく、何を選び、どう使い切るかの記録です。</p>
+    <ul class="toc">
+      <li><a href="#why">なぜ書くのか</a></li>
+      <li><a href="#rule">選ぶときの基準</a></li>
+      <li><a href="#digital">デジタル環境</a></li>
+      <li><a href="#tools">道具と身につけるもの</a></li>
+      <li><a href="#joy">楽しみを支えるサービス</a></li>
+      <li><a href="#use">減らすのではなく、使い切る</a></li>
+      <li><a href="#open">まだ確かめていないこと</a></li>
+      <li><a href="#src">元になったつぶやき</a></li>
+    </ul>
+  </header>
+
+  <section id="why">
+    <span class="sec-n">01 / WHY</span>
+    <h2>なぜ書くのか</h2>
+    <p class="pull">お気に入りのものは、生活の満足度を高めるためにある。</p>
+    <p>持っているものを数えたいわけではありません。気に入って使っているものは、単なる所有物や消費ではなく、日々の快適さや楽しさを支えています。何を選んだかを並べてみると、自分が何に満足を感じているのかが見えてきます。</p>
+    <p>並べておく理由はもう一つあります。<a href="../home/#order">整理整頓</a>のときに、残すものと手放すものを判断する材料になるからです。好きなものがはっきりしていれば、そうでないものも分かります。</p>
+  </section>
+
+  <section id="rule">
+    <span class="sec-n">02 / RULE</span>
+    <h2>選ぶときの基準</h2>
+    <p class="pull">何回使ったかではなく、それによって何ができるようになったか。</p>
+    <ul class="points">
+      <li><b>安さで選ばない</b><span>値段の安さではなく、自分に合っていて、気持ちよく使えるかどうか。良いものを少し持つほうが、満足度に効く。</span></li>
+      <li><b>価値は回数で測らない</b><span>「何回使ったか」ではなく「そのサービスによって何ができるようになったか」で見る。そのほうが自分にとっての価値を判断しやすい。</span></li>
+      <li><b>ときめきと必要性は、別のもの</b><span>ときめくかどうかは分かりやすい基準だけれど、それだけでは足りない。楽しくなくても必要なものがある。楽しさに加えて、健康・安心・将来への効きでも判断する。</span></li>
+      <li><b>選ぶ負担が減ることも価値</b><span>自分に合うものを人に選んでもらうと、選ぶ手間そのものが減る。それも満足度の一部として数える。</span></li>
+    </ul>
+    <p class="tl">迷ったときにどちらを選ぶかという、もっと手前の基準は <a href="../way-of-life/#principles">生き方</a> に書いています。</p>
+  </section>
+
+  <section id="digital">
+    <span class="sec-n">03 / DIGITAL</span>
+    <h2>デジタル環境</h2>
+    <p class="note">考えることと作ることの土台。いちばん長く触っているもの。</p>
+    <ul class="points">
+      <li><b>iPhone / Mac</b><span>日常の記録から制作まで。手に馴染んでいることを優先している。</span></li>
+      <li><b>AIサービス</b><span>ChatGPT の有料プラン、Google AI Pro など。散歩中の対話から、調べもの、文章の組み立てまで。</span></li>
+      <li><b>クラウドサービス</b><span>どの端末からでも同じものに触れられる状態を保つため。</span></li>
+    </ul>
+    <p class="tl">AIをどう使っているかは <a href="../ai/">AI</a> に、考えを形にするところは <a href="../way-of-creating/">創り方</a> に書いています。</p>
+  </section>
+
+  <section id="tools">
+    <span class="sec-n">04 / TOOLS</span>
+    <h2>道具と身につけるもの</h2>
+    <p class="note">毎日使うものほど、差が出る。</p>
+    <ul class="points">
+      <li><b>ロジクールのマウス</b><span>手に合っている。仕事中ずっと触るものなので、ここは妥協しない。</span></li>
+      <li><b>歩きやすいランニングシューズ</b><span>よく歩き、散歩を習慣にしているので、靴は履き心地から選ぶ。</span></li>
+      <li><b>動きやすいスーツとシャツ</b><span>きちんと見えることと、体が楽であることを両立させたい。</span></li>
+      <li><b>スマートウォッチ</b><span>身につけるものだが、役割は体の状態を見ること。</span></li>
+      <li><b>シモンズのベッド</b><span>いちばん気に入っている家具。いまはシングルなので、もう少し大きいものに買い替えたい。</span></li>
+    </ul>
+    <p class="tl">服の選び方は <a href="../clothes/">着る</a>、家具と家電は <a href="../home/">住む</a>、体の状態を見る道具は <a href="../health-habits/">健康</a> に書いています。</p>
+  </section>
+
+  <section id="joy">
+    <span class="sec-n">05 / JOY</span>
+    <h2>楽しみを支えるサービス</h2>
+    <p class="note">効率では説明できない、楽しみの部分。</p>
+    <ul class="points">
+      <li><b>動画配信</b><span>YouTube Premium、Netflix、U-NEXT。観たいものがあるときに、すぐ観られる状態にしておく。</span></li>
+      <li><b>映画館</b><span>週末に映画を観る。日常から離れて作品に入る時間として、配信とは別の価値がある。</span></li>
+      <li><b>株主優待</b><span>魅力的な優待を見つけると、その会社の株を買うことがある。ものをもらえる楽しさがある。</span></li>
+      <li><b>Money Forward</b><span>資産を可視化する。ただし数字を常に意識しすぎないようにしている。</span></li>
+    </ul>
+    <p class="tl">お金との距離の取り方は <a href="../money/">おかね</a> に、これから楽しみたいことは <a href="../joy/">これから</a> に書いています。</p>
+  </section>
+
+  <section id="use">
+    <span class="sec-n">06 / USE</span>
+    <h2>減らすのではなく、使い切る</h2>
+    <p class="pull">問題は契約しているサービスの多さではなく、価値を引き出せていないことだった。</p>
+    <p>複数のサブスクを契約していて、使いこなせていない気がしていました。とくにAI系のサービスについて、その感覚が強かった。最初は、何にいくら払っているか、どれくらい使っているかを整理して、不要なものを解約する方向で考えていました。</p>
+    <p>でも、それでは解決したい問題とずれている気がした。やりたいのは「減らす」ことではなく「<strong>有効活用する</strong>」ことでした。</p>
+    <p>さらに考えると、「使いこなせていない」の前に、もう一段手前がありました。<strong>そもそも何ができるのか把握していない。</strong>有料プランを契約しているのに、いまついている機能がどんなものか自分でも分かっていなかった。</p>
+    <h3>道具箱として捉え直す</h3>
+    <p>サブスクを「毎月出ていくお金」ではなく「<strong>生産性を高める道具箱</strong>」として捉え直すと、見え方が変わりました。それぞれのサービスに役割を持たせ、単独で使うのではなく組み合わせる。</p>
+    <div class="flow"><span>情報収集</span><i>→</i><span>思考</span><i>→</i><span>制作</span><i>→</i><span class="key">知識の蓄積</span></div>
+    <p class="tl">役割分担はまだ仮説です。ただ、方向としてはしっくりきています。</p>
+  </section>
+
+  <section id="open" class="open">
+    <span class="sec-n">07 / OPEN</span>
+    <h2>このノートで、まだ確かめていないこと</h2>
+    <ul>
+      <li>それぞれのサービスの役割分担は、この形でよいのか</li>
+      <li>契約している有料プランに、まだ知らない機能がどれだけあるか</li>
+      <li>「何ができるようになったか」を、どうやって振り返るか</li>
+      <li>ときめかないけれど必要なものを、どう扱うか（<a href="../home/#order">住む</a> の整理整頓と重なる）</li>
+      <li>好きなものを増やすことと、物を減らすことのつり合い</li>
+    </ul>
+  </section>
+
+  <section id="src">
+    <span class="sec-n">08 / SOURCE</span>
+    <h2>このノートの元になったつぶやき</h2>
+    <p class="note">日々の気づきを書きとめたものから、このページをまとめています。</p>
+    <nav class="src">
+      <a href="../musings/posts/p150.html">全部を同時に、やらなくてもいい<small>2026.10.13</small></a>
+      <a href="../musings/posts/p114.html">減らすのではなく、使い切る<small>2026.09.09</small></a>
+      <a href="../musings/posts/p112.html">統一ではなく、集約する<small>2026.09.07</small></a>
+    </nav>
+  </section>
+
+  <footer>
+    <p>専門家ではない個人が、自分の暮らしについてまとめた個人的なノートです。特定の製品・サービスを推奨するものではありません。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="../way-of-living/">← 暮らし方</a>　<a class="back" href="../">← m-note トップ</a></p>
+  </footer>
+</div>
+</body>
+</html>
