@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>お気に入り｜まとめノート</title>
-<meta name="description" content="ときめくものと場所を並べていくノート。家電、家具、服、デジタルツール、サービス、趣味用品、可愛いもの、場所。安いものではなく、自分に合って気持ちよく使えるものを。">
+<meta name="description" content="ときめくものと、また行きたい場所。家電・家具・服・デジタルツール・サービス・趣味用品・可愛いもの・場所の、お気に入りの一覧。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
@@ -25,75 +25,49 @@
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;
-    font-size:16px;line-height:1.95;-webkit-font-smoothing:antialiased}
+    font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased}
   a{color:inherit}
-  .wrap{max-width:48rem;margin:0 auto;padding:0 16px}
+  .wrap{max-width:60rem;margin:0 auto;padding:0 16px}
   @media (min-width:640px){.wrap{padding:0 28px}}
 
   .top{padding:24px 0 0}
   .back{font-size:.75rem;letter-spacing:.1em;color:var(--muted);text-decoration:none}
   .back:hover{color:var(--ink)}
 
-  header.hero{padding:72px 0 24px}
+  header.hero{padding:64px 0 10px}
   .eyebrow{font-size:.7rem;letter-spacing:.24em;color:var(--accent);margin:0 0 14px}
   h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(2rem,6vw,2.8rem);line-height:1.4;margin:0 0 6px;letter-spacing:.04em}
-  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;letter-spacing:.02em;margin:.1em 0 1.1em;opacity:.85}
-  .lead{color:var(--muted);margin:0;max-width:34em}
+  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.35rem);line-height:1.75;letter-spacing:.02em;margin:.1em 0 0;opacity:.85}
 
-  .toc{list-style:none;margin:30px 0 0;padding:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;
+  .toc{list-style:none;margin:28px 0 0;padding:16px 0 0;display:flex;flex-wrap:wrap;gap:8px 16px;
     border-top:1px solid var(--line)}
   .toc a{font-size:.8rem;color:var(--muted);text-decoration:none}
   .toc a:hover{color:var(--accent)}
 
-  section{padding:56px 0 0}
-  .sec-n{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--faint);margin-bottom:8px}
-  h2{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.3rem;letter-spacing:.04em;margin:0 0 6px}
-  h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1rem;margin:28px 0 6px}
-  .pull{font-family:"Noto Serif JP",serif;font-weight:500;font-size:1.05rem;line-height:1.8;margin:.2em 0 1em;opacity:.85}
-  .note{color:var(--faint);font-size:.82rem;margin:0 0 22px}
-  p{margin:0 0 14px}
+  section{padding:52px 0 0}
+  .cat-h{display:flex;align-items:baseline;gap:12px;margin:0 0 4px}
+  .cat-h h2{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.3rem;letter-spacing:.04em;margin:0}
+  .cat-h .en{font-size:.64rem;letter-spacing:.2em;color:var(--faint)}
+  .cat-h .n{margin-left:auto;font-size:.68rem;letter-spacing:.12em;color:var(--faint)}
+  .cat-rule{height:1px;background:var(--line);margin:0 0 18px}
 
-  .points{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
-  .points li{padding:14px 18px;background:var(--card);border-radius:3px;font-size:.95rem}
-  .points b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;margin-bottom:2px}
-  .points span{color:var(--muted);font-size:.9rem}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media (min-width:560px){.grid{grid-template-columns:repeat(3,1fr)}}
+  @media (min-width:860px){.grid{grid-template-columns:repeat(4,1fr)}}
 
-  .two{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0}
-  @media (min-width:640px){.two{grid-template-columns:1fr 1fr}}
-  .two div{padding:16px 18px;border:1px solid var(--line);border-radius:3px}
-  .two b{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--accent);margin-bottom:8px}
-  .two ul{margin:0;padding-left:1.1em;font-size:.9rem;color:var(--muted)}
-  .two li{margin:0 0 5px}
+  .card{display:flex;flex-direction:column;gap:9px}
+  .shot{position:relative;aspect-ratio:1/1;border-radius:4px;overflow:hidden;background:var(--card);
+    border:1px solid var(--line)}
+  .shot img{width:100%;height:100%;object-fit:cover;display:block}
+  .shot .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:"Noto Serif JP",serif;font-size:2rem;color:var(--faint);opacity:.5;user-select:none}
+  .card b{font-family:"Noto Serif JP",serif;font-weight:600;font-size:.98rem;line-height:1.55}
+  .card span{font-size:.82rem;color:var(--muted);line-height:1.7}
+  .empty{color:var(--faint);font-size:.86rem;margin:0}
 
-  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:20px 0 0;font-size:.86rem;color:var(--muted)}
-  .flow span{padding:7px 13px;background:var(--card);border-radius:3px}
-  .flow i{font-style:normal;color:var(--faint)}
-  .flow .key{color:var(--ink);box-shadow:inset 0 0 0 1px var(--accent)}
-
-  .todo{margin:16px 0 0;padding:16px 18px;border:1px dashed var(--line);border-radius:3px;
-    color:var(--faint);font-size:.86rem;line-height:1.85}
-  .todo b{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--accent);margin-bottom:6px;font-weight:700}
-
-  .open ul{margin:14px 0 0;padding-left:1.2em;color:var(--muted);font-size:.92rem}
-  .open li{margin:0 0 7px}
-
-  .src{display:grid;border-top:1px solid var(--line);margin-top:12px}
-  .src a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
-    padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-size:.92rem}
-  .src a:hover{color:var(--accent)}
-  .src small{color:var(--faint);font-size:.76rem;letter-spacing:.06em;white-space:nowrap}
-
-  .tl{margin-top:18px;font-size:.9rem;color:var(--muted)}
-  .tl a{color:var(--accent)}
-
-  footer{margin:88px 0 0;padding:28px 0 64px;border-top:1px solid var(--line)}
+  footer{margin:84px 0 0;padding:26px 0 60px;border-top:1px solid var(--line)}
   footer p{font-size:.78rem;color:var(--faint);line-height:1.85;margin:0 0 12px}
-
-  .chips{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
-  .chips li{padding:9px 18px;background:var(--card);border:1px solid var(--line);border-radius:999px;
-    font-family:"Noto Serif JP",serif;font-weight:600;font-size:.98rem}
-  .empty{color:var(--faint);font-size:.86rem;margin:14px 0 0}
-  .cat-lead{color:var(--muted);font-size:.9rem;margin:0}
+  footer a{color:var(--muted)}
 </style>
 </head>
 <body>
@@ -104,10 +78,7 @@
     <p class="eyebrow">FAVORITES</p>
     <h1>お気に入り</h1>
     <p class="mn-tagline">ときめくものと、また行きたい場所。</p>
-    <p class="lead">いま手元にあって、気に入っているものを並べていくページです。持ち物の自慢ではなく、何にときめいたかの記録。増えたら足し、ときめかなくなったら外します。</p>
     <ul class="toc">
-      <li><a href="#about">このページについて</a></li>
-      <li><a href="#rule">選ぶときの基準</a></li>
       <li><a href="#appliances">家電</a></li>
       <li><a href="#furniture">家具</a></li>
       <li><a href="#apparel">服</a></li>
@@ -116,132 +87,76 @@
       <li><a href="#hobby">趣味用品</a></li>
       <li><a href="#cute">可愛いもの</a></li>
       <li><a href="#places">場所</a></li>
-      <li><a href="#use">使い切る</a></li>
     </ul>
   </header>
 
-  <section id="about">
-    <span class="sec-n">01 / ABOUT</span>
-    <h2>このページについて</h2>
-    <p>ここは<strong>並べるための場所</strong>です。なぜそれを選ぶのかという考え方は、それぞれのノートに書いています ― 家電と整理整頓は <a href="../home/">住む</a>、服の基準は <a href="../clothes/">着る</a>、お金との距離は <a href="../money/">おかね</a>、体のための道具は <a href="../health-habits/">健康</a>。</p>
-    <p>このページには<strong>現物だけ</strong>を置きます。考え方は各ノート、実際に手元にあるものはここ。そう分けると、どちらも短く保てます。</p>
-    <p class="muted">まだ手に入れていない、欲しいものは <a href="../joy/">これから</a> に書いています。ここにあるのは、すでに持っているものだけです。</p>
-  </section>
-
-  <section id="rule">
-    <span class="sec-n">02 / RULE</span>
-    <h2>選ぶときの基準</h2>
-    <p class="pull">何回使ったかではなく、それによって何ができるようになったか。</p>
-    <ul class="points">
-      <li><b>安さで選ばない</b><span>値段ではなく、自分に合っていて気持ちよく使えるかどうか。良いものを少し持つほうが満足度に効く。</span></li>
-      <li><b>価値は回数で測らない</b><span>「何回使ったか」ではなく「それによって何ができるようになったか」で見る。</span></li>
-      <li><b>ときめきと必要性は、別のもの</b><span>ときめくかどうかは分かりやすい基準だが、それだけでは足りない。楽しくなくても必要なものがある。</span></li>
-      <li><b>選ぶ負担が減ることも価値</b><span>自分に合うものを人に選んでもらえば、選ぶ手間そのものが減る。それも満足度の一部。</span></li>
-      <li><b>買ったら、ひとつ手放す</b><span>総量を変えないと決めておけば、増やすことを我慢しなくて済む（<a href="../home/#order">住む</a>）。</span></li>
-    </ul>
-  </section>
-
   <section id="appliances">
-    <span class="sec-n">03 / APPLIANCES</span>
-    <h2>家電</h2>
-    <p class="cat-lead">暮らしの手間を引き受けてくれるもの。</p>
-    <div data-list="appliances"><p class="empty">読み込み中…</p></div>
+    <div class="cat-h"><h2>家電</h2><span class="en">APPLIANCES</span><span class="n" data-count="appliances"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="appliances"><p class="empty">読み込み中…</p></div>
   </section>
   <section id="furniture">
-    <span class="sec-n">04 / FURNITURE</span>
-    <h2>家具</h2>
-    <p class="cat-lead">長く触れるものほど、効いてくる。</p>
-    <div data-list="furniture"><p class="empty">読み込み中…</p></div>
+    <div class="cat-h"><h2>家具</h2><span class="en">FURNITURE</span><span class="n" data-count="furniture"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="furniture"><p class="empty">読み込み中…</p></div>
   </section>
   <section id="apparel">
-    <span class="sec-n">05 / APPAREL</span>
-    <h2>服</h2>
-    <p class="cat-lead">肌ざわりで選んだもの。</p>
-    <div data-list="apparel"><p class="empty">読み込み中…</p></div>
+    <div class="cat-h"><h2>服</h2><span class="en">APPAREL</span><span class="n" data-count="apparel"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="apparel"><p class="empty">読み込み中…</p></div>
   </section>
   <section id="digital">
-    <span class="sec-n">06 / DIGITAL</span>
-    <h2>デジタルツール</h2>
-    <p class="cat-lead">考えることと作ることの土台。</p>
-    <div data-list="digital"><p class="empty">読み込み中…</p></div>
+    <div class="cat-h"><h2>デジタルツール</h2><span class="en">DIGITAL</span><span class="n" data-count="digital"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="digital"><p class="empty">読み込み中…</p></div>
   </section>
   <section id="services">
-    <span class="sec-n">07 / SERVICES</span>
-    <h2>サービス</h2>
-    <p class="cat-lead">毎月払っているもの。道具箱として見る。</p>
-    <div data-list="services"><p class="empty">読み込み中…</p></div>
+    <div class="cat-h"><h2>サービス</h2><span class="en">SERVICES</span><span class="n" data-count="services"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="services"><p class="empty">読み込み中…</p></div>
   </section>
   <section id="hobby">
-    <span class="sec-n">08 / HOBBY</span>
-    <h2>趣味用品</h2>
-    <p class="cat-lead">なくても困らないが、あると世界が広がるもの。いまのところキャンプとカメラ。</p>
-    <div data-list="hobby"><p class="empty">読み込み中…</p></div>
+    <div class="cat-h"><h2>趣味用品</h2><span class="en">HOBBY</span><span class="n" data-count="hobby"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="hobby"><p class="empty">読み込み中…</p></div>
   </section>
   <section id="cute">
-    <span class="sec-n">09 / CUTE</span>
-    <h2>可愛いもの</h2>
-    <p class="cat-lead">役に立たなくていい。見ていて心が動くもの。選ぶ基準は、直感。</p>
-    <div data-list="cute" data-style="chips"><p class="empty">読み込み中…</p></div>
-    <p class="muted" style="margin-top:20px">直感で選んでいるつもりでしたが、並べてみると二つ共通点がありました。ひとつは<strong>どれも手のひらに載る大きさ</strong>だということ。もうひとつは<strong>ハシビロコウが二度出てくる</strong>ことです。<a href="#places">場所</a>でも鳥の多い公園を挙げているので、鳥に反応しているのかもしれません。</p>
-    <p class="muted">服で「<a href="../clothes/#have">肌ざわり</a>」が軸だと分かったときと同じで、直感にも型があるようです。ただ、ここは言葉にしすぎないほうがいいとも思っています。理由が説明できるものだけを選ぶようになったら、たぶん面白くない。</p>
+    <div class="cat-h"><h2>可愛いもの</h2><span class="en">CUTE</span><span class="n" data-count="cute"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="cute"><p class="empty">読み込み中…</p></div>
   </section>
   <section id="places">
-    <span class="sec-n">10 / PLACES</span>
-    <h2>場所</h2>
-    <p class="cat-lead">また行きたくなる場所。遠出ではなく、暮らしの範囲で。</p>
-    <div data-list="places"><p class="empty">読み込み中…</p></div>
-  </section>
-
-  <section id="use">
-    <span class="sec-n">11 / USE</span>
-    <h2>使い切る</h2>
-    <p class="pull">問題は契約しているサービスの多さではなく、価値を引き出せていないことだった。</p>
-    <p>サブスクを使いこなせていない気がしていたとき、最初は不要なものを解約する方向で考えていました。でもやりたいのは「減らす」ことではなく「<strong>有効活用する</strong>」ことでした。しかも「使いこなせていない」の前に、<strong>そもそも何ができるのか把握していない</strong>という段階がありました。</p>
-    <p>サブスクを「毎月出ていくお金」ではなく「<strong>生産性を高める道具箱</strong>」として捉え直すと、見え方が変わります。それぞれに役割を持たせ、単独ではなく組み合わせる。</p>
-    <div class="flow"><span>情報収集</span><i>→</i><span>思考</span><i>→</i><span>制作</span><i>→</i><span class="key">知識の蓄積</span></div>
-    <p>いま当てはまっているのは動画配信です。3つ契約して、よく観ているのは2つ。残りは観る習慣になっていません。<strong>解約するか、役割を決めて使うか。</strong>どちらかを選べていない状態が、いちばん価値を落としています。</p>
-  </section>
-
-  <section id="open" class="open">
-    <span class="sec-n">12 / OPEN</span>
-    <h2>このノートで、まだ確かめていないこと</h2>
-    <ul>
-      <li>観る習慣になっていない配信サービスを、役割を決めて使うのか、やめるのか</li>
-      <li>「何ができるようになったか」を、どうやって振り返るか</li>
-      <li>買ったらひとつ手放す、という運用をどこまで徹底できるか（<a href="../home/#order">住む</a> で決めた形）</li>
-      <li>ときめかないけれど必要なものを、どう扱うか</li>
-      <li>可愛いと感じるものに共通点があるのはなぜか。直感だと思っていたものに、型があるのか</li>
-      <li>ハシビロコウに二度惹かれているのは偶然か。鳥そのものが好きなのか</li>
-      <li>キャンプの道具は揃っているのに、行く回数は十分か</li>
-    </ul>
-  </section>
-
-  <section id="src">
-    <span class="sec-n">13 / SOURCE</span>
-    <h2>このノートの元になったつぶやき</h2>
-    <p class="note">日々の気づきを書きとめたものから、このページをまとめています。</p>
-    <nav class="src">
-      <a href="../musings/posts/p150.html">全部を同時に、やらなくてもいい<small>2026.10.13</small></a>
-      <a href="../musings/posts/p114.html">減らすのではなく、使い切る<small>2026.09.09</small></a>
-      <a href="../musings/posts/p112.html">統一ではなく、集約する<small>2026.09.07</small></a>
-    </nav>
+    <div class="cat-h"><h2>場所</h2><span class="en">PLACES</span><span class="n" data-count="places"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="places"><p class="empty">読み込み中…</p></div>
   </section>
 
   <footer>
-    <p>専門家ではない個人が、自分のために書きとめている個人的なノートです。特定の製品・サービスを推奨するものではありません。</p>
+    <p>選ぶときの基準は <a href="../money/#spend">おかね</a> に、手放すときの基準は <a href="../home/#order">住む</a> に、まだ持っていない欲しいものは <a href="../joy/">これから</a> に書いています。</p>
+    <p>専門家ではない個人が、自分のために書きとめている個人的なノートです。特定の製品・サービスを推奨するものではありません。写真は自分で撮ったものだけを載せています。</p>
     <p><a class="back" href="../">← m-note トップ</a></p>
   </footer>
 </div>
 <script>
-// items.json の各カテゴリーを、対応する欄に並べる
+// items.json を読んで、カテゴリーごとにカードを並べる。
+// img があれば images/ の写真を出し、無ければ頭文字のプレースホルダーを出す。
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const card = it => {
+  const shot = it.img
+    ? `<div class="shot"><img src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy"></div>`
+    : `<div class="shot"><span class="ph">${esc([...String(it.title ?? "")][0] ?? "")}</span></div>`;
+  return `<div class="card">${shot}<b>${esc(it.title)}</b>${it.memo ? `<span>${esc(it.memo)}</span>` : ""}</div>`;
+};
 function render(data){
   document.querySelectorAll("[data-list]").forEach(box => {
     const list = data[box.dataset.list] || [];
-    if (!list.length) { box.innerHTML = `<p class="empty">まだありません。思いついたら足していく。</p>`; return; }
-    box.innerHTML = box.dataset.style === "chips"
-      ? `<ul class="chips">${list.map(it => `<li>${esc(it.title)}</li>`).join("")}</ul>`
-      : `<ul class="points">${list.map(it => `<li><b>${esc(it.title)}</b>${it.memo ? `<span>${esc(it.memo)}</span>` : ""}</li>`).join("")}</ul>`;
+    box.innerHTML = list.length
+      ? list.map(card).join("")
+      : `<p class="empty">まだありません。思いついたら足していく。</p>`;
+  });
+  document.querySelectorAll("[data-count]").forEach(el => {
+    const n = (data[el.dataset.count] || []).length;
+    el.textContent = n ? n + "点" : "";
   });
 }
 fetch("items.json").then(r => r.json()).then(render).catch(() => render({}));

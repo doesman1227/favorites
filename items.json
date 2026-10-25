@@ -1,5 +1,5 @@
 {
-  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、apparel=服、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。memo は書きたいときだけ足す。ときめかなくなったら消す。",
+  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、apparel=服、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。各項目は title が必須、memo と img は任意。img は \"images/<ファイル名>\" で、自分で撮った写真だけを置く（images/README.md）。ときめかなくなったら消す。",
   "appliances": [
     {
       "title": "ドラム式洗濯機",
