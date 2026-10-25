@@ -1,149 +1,184 @@
 {
-  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、apparel=服、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。各項目は title が必須、memo と img は任意。img は \"images/<ファイル名>\" で、自分で撮った写真だけを置く（images/README.md）。ときめかなくなったら消す。",
+  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、apparel=服、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。title が必須。memo・slug・img は任意。写真は images/_inbox/<slug>.jpg に置いて add_images.py を実行すると、正方形に整えて images/<slug>.jpg へ入り、img が自動で設定される。自分で撮った写真だけを置く（images/README.md）。ときめかなくなったら消す。",
   "appliances": [
     {
       "title": "ドラム式洗濯機",
-      "memo": "洗って乾かすまでが一度で終わる。干す工程が消えた。"
+      "memo": "洗って乾かすまでが一度で終わる。干す工程が消えた。",
+      "slug": "washer"
     },
     {
       "title": "ブレンダー",
-      "memo": "準備と片付けが軽いので、使う回数が落ちない。"
+      "memo": "準備と片付けが軽いので、使う回数が落ちない。",
+      "slug": "blender"
     },
     {
       "title": "SHARP KN-HW10E-B",
-      "memo": "自動調理鍋。材料を入れて放っておける。ここも手間を引き受けてくれる側。"
+      "memo": "自動調理鍋。材料を入れて放っておける。ここも手間を引き受けてくれる側。",
+      "slug": "hotcook"
     }
   ],
   "furniture": [
     {
       "title": "シモンズのマットレス（シングル）",
-      "memo": "いちばん気に入っている家具。シングルなので、もう少し大きいものに替えたい。"
+      "memo": "いちばん気に入っている家具。シングルなので、もう少し大きいものに替えたい。",
+      "slug": "simmons-mattress"
     }
   ],
   "apparel": [
     {
       "title": "ジェラートピケのパジャマ",
-      "memo": "着ると調子がいい。肌ざわりで選んでいる。"
+      "memo": "着ると調子がいい。肌ざわりで選んでいる。",
+      "slug": "gelato-pique-pajamas"
     },
     {
       "title": "UNITED TOKYO の服",
-      "memo": "肌触りのよさで選んだもの。"
+      "memo": "肌触りのよさで選んだもの。",
+      "slug": "united-tokyo"
     },
     {
       "title": "動きやすいスーツとシャツ",
-      "memo": "きちんと見えることと、体が楽であることの両立。"
+      "memo": "きちんと見えることと、体が楽であることの両立。",
+      "slug": "suit-shirt"
     },
     {
       "title": "歩きやすいランニングシューズ",
-      "memo": "よく歩くので、靴は履き心地から選ぶ。"
+      "memo": "よく歩くので、靴は履き心地から選ぶ。",
+      "slug": "running-shoes"
     }
   ],
   "digital": [
     {
-      "title": "iPhone"
+      "title": "iPhone",
+      "slug": "iphone"
     },
     {
-      "title": "Mac"
+      "title": "Mac",
+      "slug": "mac"
     },
     {
       "title": "ロジクールのマウス",
-      "memo": "手に合っている。毎日触るものほど差が出る。"
+      "memo": "手に合っている。毎日触るものほど差が出る。",
+      "slug": "logicool-mouse"
     },
     {
       "title": "AirPods 4",
-      "memo": "歩きながら聴く、話す。散歩とAIとの対話が習慣なので効く。"
+      "memo": "歩きながら聴く、話す。散歩とAIとの対話が習慣なので効く。",
+      "slug": "airpods-4"
     },
     {
       "title": "スマートウォッチ",
-      "memo": "身につけるものだが、役割は体の状態を見ること。"
+      "memo": "身につけるものだが、役割は体の状態を見ること。",
+      "slug": "smartwatch"
     }
   ],
   "services": [
     {
-      "title": "ChatGPT"
+      "title": "ChatGPT",
+      "slug": "chatgpt"
     },
     {
-      "title": "Claude"
+      "title": "Claude",
+      "slug": "claude"
     },
     {
-      "title": "Google AI Pro"
+      "title": "Google AI Pro",
+      "slug": "google-ai-pro"
     },
     {
       "title": "YouTube Premium",
-      "memo": "よく観ている。"
+      "memo": "よく観ている。",
+      "slug": "youtube-premium"
     },
     {
       "title": "Netflix",
-      "memo": "よく観ている。"
+      "memo": "よく観ている。",
+      "slug": "netflix"
     },
     {
       "title": "U-NEXT",
-      "memo": "契約しているが、観る習慣になっていない。"
+      "memo": "契約しているが、観る習慣になっていない。",
+      "slug": "u-next"
     },
     {
       "title": "Amazon Prime Music",
-      "memo": "探さずに流せる。部屋で過ごす時間の背景として。"
+      "memo": "探さずに流せる。部屋で過ごす時間の背景として。",
+      "slug": "prime-music"
     },
     {
       "title": "Money Forward",
-      "memo": "資産を一か所で可視化する。見続けないようにしている。"
+      "memo": "資産を一か所で可視化する。見続けないようにしている。",
+      "slug": "money-forward"
     }
   ],
   "hobby": [
     {
       "title": "トランギア メスティン",
-      "memo": "キャンプ用の飯ごう。"
+      "memo": "キャンプ用の飯ごう。",
+      "slug": "trangia-mestin"
     },
     {
       "title": "ニーモ アトム 2P",
-      "memo": "テント。"
+      "memo": "テント。",
+      "slug": "nemo-atom-2p"
     },
     {
       "title": "モンベル ステラリッジ テント1",
-      "memo": "テント。"
+      "memo": "テント。",
+      "slug": "stellaridge-1"
     },
     {
       "title": "モンベル アルパイン ダウンハガー 800 #1",
-      "memo": "寝袋。"
+      "memo": "寝袋。",
+      "slug": "downhugger-800"
     },
     {
       "title": "ソト フィールドホッパー",
-      "memo": "折りたたみのテーブル。"
+      "memo": "折りたたみのテーブル。",
+      "slug": "field-hopper"
     },
     {
       "title": "RICOH GR III",
-      "memo": "カメラ。"
+      "memo": "カメラ。",
+      "slug": "ricoh-gr3"
     }
   ],
   "cute": [
     {
-      "title": "ハシビロコウのフィギュア"
+      "title": "ハシビロコウのフィギュア",
+      "slug": "shoebill-figure"
     },
     {
-      "title": "ハシビロコウのコップ"
+      "title": "ハシビロコウのコップ",
+      "slug": "shoebill-cup"
     },
     {
-      "title": "小網神社のカエルのお守り"
+      "title": "小網神社のカエルのお守り",
+      "slug": "koami-frog"
     },
     {
-      "title": "ダンボーのフィギュア"
+      "title": "ダンボーのフィギュア",
+      "slug": "danboard"
     },
     {
-      "title": "ルチルの水晶玉"
+      "title": "ルチルの水晶玉",
+      "slug": "rutile-quartz"
     }
   ],
   "places": [
     {
       "title": "鳥の多い公園",
-      "memo": "家からすぐ行ける。いまの家を気に入っている理由のひとつ。"
+      "memo": "家からすぐ行ける。いまの家を気に入っている理由のひとつ。",
+      "slug": "park"
     },
     {
       "title": "ジムの大きなお風呂",
-      "memo": "運動のあとにほどける。人のいる場所にいることも目的のうち。"
+      "memo": "運動のあとにほどける。人のいる場所にいることも目的のうち。",
+      "slug": "gym-bath"
     },
     {
       "title": "映画館",
-      "memo": "週末に行く。日常から離れて作品に入る時間。"
+      "memo": "週末に行く。日常から離れて作品に入る時間。",
+      "slug": "cinema"
     }
   ]
 }
