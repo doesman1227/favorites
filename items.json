@@ -1,5 +1,5 @@
 {
-  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、apparel=服、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。title が必須。memo・slug・img は任意。写真は images/_inbox/<slug>.jpg に置いて add_images.py を実行すると、正方形に整えて images/<slug>.jpg へ入り、img が自動で設定される。自分で撮った写真だけを置く（images/README.md）。ときめかなくなったら消す。",
+  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、tableware=食器、apparel=服、stationery=文房具、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。title が必須。memo・slug・img・url は任意。url は http/https のみ。写真が無くても url とひとことだけで登録してよい。写真は images/_inbox/<slug>.jpg に置いて add_images.py を実行する（images/README.md）。自分で撮った写真だけを置く。ときめかなくなったら消す。※このファイルは公開リポジトリに入るので、人に見せたくないものは書かない。",
   "appliances": [
     {
       "title": "ドラム式洗濯機",
@@ -24,6 +24,13 @@
       "slug": "simmons-mattress"
     }
   ],
+  "tableware": [
+    {
+      "title": "ご飯を炊く土鍋",
+      "memo": "炊飯器ではなく土鍋で炊く。",
+      "slug": "donabe"
+    }
+  ],
   "apparel": [
     {
       "title": "ジェラートピケのパジャマ",
@@ -46,6 +53,7 @@
       "slug": "running-shoes"
     }
   ],
+  "stationery": [],
   "digital": [
     {
       "title": "iPhone",
@@ -66,9 +74,9 @@
       "slug": "airpods-4"
     },
     {
-      "title": "スマートウォッチ",
+      "title": "Google Fitbit Air",
       "memo": "身につけるものだが、役割は体の状態を見ること。",
-      "slug": "smartwatch"
+      "slug": "fitbit-air"
     }
   ],
   "services": [

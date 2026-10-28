@@ -62,6 +62,8 @@
   .shot .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     font-family:"Noto Serif JP",serif;font-size:2rem;color:var(--faint);opacity:.5;user-select:none}
   .card b{font-family:"Noto Serif JP",serif;font-weight:600;font-size:.98rem;line-height:1.55}
+  .card b a{text-decoration:none;border-bottom:1px solid var(--line)}
+  .card b a:hover{color:var(--accent);border-bottom-color:var(--accent)}
   .card span{font-size:.82rem;color:var(--muted);line-height:1.7}
   .empty{color:var(--faint);font-size:.86rem;margin:0}
 
@@ -81,7 +83,9 @@
     <ul class="toc">
       <li><a href="#appliances">家電</a></li>
       <li><a href="#furniture">家具</a></li>
+      <li><a href="#tableware">食器</a></li>
       <li><a href="#apparel">服</a></li>
+      <li><a href="#stationery">文房具</a></li>
       <li><a href="#digital">デジタルツール</a></li>
       <li><a href="#services">サービス</a></li>
       <li><a href="#hobby">趣味用品</a></li>
@@ -100,10 +104,20 @@
     <div class="cat-rule"></div>
     <div class="grid" data-list="furniture"><p class="empty">読み込み中…</p></div>
   </section>
+  <section id="tableware">
+    <div class="cat-h"><h2>食器</h2><span class="en">TABLEWARE</span><span class="n" data-count="tableware"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="tableware"><p class="empty">読み込み中…</p></div>
+  </section>
   <section id="apparel">
     <div class="cat-h"><h2>服</h2><span class="en">APPAREL</span><span class="n" data-count="apparel"></span></div>
     <div class="cat-rule"></div>
     <div class="grid" data-list="apparel"><p class="empty">読み込み中…</p></div>
+  </section>
+  <section id="stationery">
+    <div class="cat-h"><h2>文房具</h2><span class="en">STATIONERY</span><span class="n" data-count="stationery"></span></div>
+    <div class="cat-rule"></div>
+    <div class="grid" data-list="stationery"><p class="empty">読み込み中…</p></div>
   </section>
   <section id="digital">
     <div class="cat-h"><h2>デジタルツール</h2><span class="en">DIGITAL</span><span class="n" data-count="digital"></span></div>
@@ -141,11 +155,21 @@
 // items.json を読んで、カテゴリーごとにカードを並べる。
 // img があれば images/ の写真を出し、無ければ頭文字のプレースホルダーを出す。
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+// 外部リンクは http / https のものだけを出す
+const safeUrl = u => {
+  try { const x = new URL(String(u), location.href);
+        return (x.protocol === "http:" || x.protocol === "https:") ? x.href : ""; }
+  catch { return ""; }
+};
 const card = it => {
   const shot = it.img
     ? `<div class="shot"><img src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy"></div>`
     : `<div class="shot"><span class="ph">${esc([...String(it.title ?? "")][0] ?? "")}</span></div>`;
-  return `<div class="card">${shot}<b>${esc(it.title)}</b>${it.memo ? `<span>${esc(it.memo)}</span>` : ""}</div>`;
+  const u = safeUrl(it.url);
+  const name = u
+    ? `<b><a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(it.title)}</a></b>`
+    : `<b>${esc(it.title)}</b>`;
+  return `<div class="card">${shot}${name}${it.memo ? `<span>${esc(it.memo)}</span>` : ""}</div>`;
 };
 function render(data){
   document.querySelectorAll("[data-list]").forEach(box => {
