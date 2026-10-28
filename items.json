@@ -53,7 +53,13 @@
       "slug": "running-shoes"
     }
   ],
-  "stationery": [],
+  "stationery": [
+    {
+      "title": "ウォーターマンのボールペン",
+      "memo": "いま使っているペン。",
+      "slug": "waterman"
+    }
+  ],
   "digital": [
     {
       "title": "iPhone",
