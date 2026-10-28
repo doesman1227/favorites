@@ -1,5 +1,5 @@
 {
-  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、tableware=食器、apparel=服、stationery=文房具、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。title が必須。memo・slug・img・url は任意。url は http/https のみ。写真が無くても url とひとことだけで登録してよい。写真は images/_inbox/<slug>.jpg に置いて add_images.py を実行する（images/README.md）。自分で撮った写真だけを置く。ときめかなくなったら消す。※このファイルは公開リポジトリに入るので、人に見せたくないものは書かない。",
+  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、tableware=食器、apparel=服、stationery=文房具、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。title が必須。memo・slug・img・url は任意。url は http/https のみ。写真が無くても url とひとことだけで登録してよい。写真は images/_inbox/<slug>.jpg に置いて add_images.py を実行する（images/README.md）。★このファイルは公開リポジトリに入り、誰でも全文を読める。非公開という状態は持たない方針なので、公開していいものだけを書く。見せたくないものはここに書かない。ときめかなくなったら消す。",
   "appliances": [
     {
       "title": "ドラム式洗濯機",
