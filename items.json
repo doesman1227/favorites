@@ -1,198 +1,259 @@
 {
-  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、tableware=食器、apparel=服、stationery=文房具、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。title が必須。memo・slug・img・url は任意。url は http/https のみ。写真が無くても url とひとことだけで登録してよい。写真は images/_inbox/<slug>.jpg に置いて add_images.py を実行する（images/README.md）。★このファイルは公開リポジトリに入り、誰でも全文を読める。非公開という状態は持たない方針なので、公開していいものだけを書く。見せたくないものはここに書かない。ときめかなくなったら消す。",
+  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、tableware=食器、apparel=服、stationery=文房具、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。title が必須。memo・slug・icon・img・url は任意。icon は index.html の <symbol id=\"i-…\"> の名前（washer/pot/tent/camera など）。無いときはカテゴリの既定アイコン、それも無ければ頭文字が出る。img があれば写真が優先。url は公式の商品ページ（http/https のみ）。枠と名前の両方がそのリンクになる。実際に開いて確認が取れたものだけ書く（推測で書かない）。写真は images/_inbox/<slug>.jpg に置いて add_images.py を実行する（images/README.md）。管理パネル http://localhost:8787/favorites からも編集できる。★このファイルは公開リポジトリに入り、誰でも全文を読める。非公開という状態は持たない方針なので、公開していいものだけを書く。見せたくないものはここに書かない。ときめかなくなったら消す。",
   "appliances": [
     {
       "title": "ドラム式洗濯機",
       "memo": "洗って乾かすまでが一度で終わる。干す工程が消えた。",
-      "slug": "washer"
+      "slug": "washer",
+      "icon": "washer"
     },
     {
       "title": "ブレンダー",
       "memo": "準備と片付けが軽いので、使う回数が落ちない。",
-      "slug": "blender"
+      "slug": "blender",
+      "icon": "blender"
     },
     {
       "title": "SHARP KN-HW10E-B",
       "memo": "自動調理鍋。材料を入れて放っておける。ここも手間を引き受けてくれる側。",
-      "slug": "hotcook"
+      "slug": "hotcook",
+      "icon": "pot",
+      "url": "https://jp.sharp/hotcook/products/knhw10e/"
     }
   ],
   "furniture": [
     {
       "title": "シモンズのマットレス（シングル）",
       "memo": "いちばん気に入っている家具。シングルなので、もう少し大きいものに替えたい。",
-      "slug": "simmons-mattress"
+      "slug": "simmons-mattress",
+      "icon": "bed",
+      "url": "https://www.simmons.co.jp/"
     }
   ],
   "tableware": [
     {
       "title": "ご飯を炊く土鍋",
       "memo": "炊飯器ではなく土鍋で炊く。",
-      "slug": "donabe"
+      "slug": "donabe",
+      "icon": "bowl"
     }
   ],
   "apparel": [
     {
       "title": "ジェラートピケのパジャマ",
       "memo": "着ると調子がいい。肌ざわりで選んでいる。",
-      "slug": "gelato-pique-pajamas"
+      "slug": "gelato-pique-pajamas",
+      "icon": "shirt",
+      "url": "https://gelatopique.com/"
     },
     {
       "title": "UNITED TOKYO の服",
       "memo": "肌触りのよさで選んだもの。",
-      "slug": "united-tokyo"
+      "slug": "united-tokyo",
+      "icon": "hanger",
+      "url": "https://united-tokyo.com/"
     },
     {
       "title": "動きやすいスーツとシャツ",
       "memo": "きちんと見えることと、体が楽であることの両立。",
-      "slug": "suit-shirt"
+      "slug": "suit-shirt",
+      "icon": "shirt"
     },
     {
       "title": "歩きやすいランニングシューズ",
       "memo": "よく歩くので、靴は履き心地から選ぶ。",
-      "slug": "running-shoes"
+      "slug": "running-shoes",
+      "icon": "shoe"
     }
   ],
   "stationery": [
     {
       "title": "ウォーターマンのボールペン",
       "memo": "いま使っているペン。",
-      "slug": "waterman"
+      "slug": "waterman",
+      "icon": "pen",
+      "url": "https://www.waterman.com/"
     }
   ],
   "digital": [
     {
       "title": "iPhone",
-      "slug": "iphone"
+      "slug": "iphone",
+      "icon": "phone",
+      "url": "https://www.apple.com/jp/iphone/"
     },
     {
       "title": "Mac",
-      "slug": "mac"
+      "slug": "mac",
+      "icon": "laptop",
+      "url": "https://www.apple.com/jp/mac/"
     },
     {
       "title": "ロジクールのマウス",
       "memo": "手に合っている。毎日触るものほど差が出る。",
-      "slug": "logicool-mouse"
+      "slug": "logicool-mouse",
+      "icon": "mouse",
+      "url": "https://www.logicool.co.jp/ja-jp/shop/c/mice"
     },
     {
       "title": "AirPods 4",
       "memo": "歩きながら聴く、話す。散歩とAIとの対話が習慣なので効く。",
-      "slug": "airpods-4"
+      "slug": "airpods-4",
+      "icon": "earbuds",
+      "url": "https://www.apple.com/jp/airpods/"
     },
     {
       "title": "Google Fitbit Air",
       "memo": "身につけるものだが、役割は体の状態を見ること。",
-      "slug": "fitbit-air"
+      "slug": "fitbit-air",
+      "icon": "watch",
+      "url": "https://store.google.com/jp/category/watches_trackers?hl=ja"
     }
   ],
   "services": [
     {
       "title": "ChatGPT",
-      "slug": "chatgpt"
+      "slug": "chatgpt",
+      "icon": "sparkle",
+      "url": "https://chatgpt.com/"
     },
     {
       "title": "Claude",
-      "slug": "claude"
+      "slug": "claude",
+      "icon": "sparkle",
+      "url": "https://claude.com/"
     },
     {
       "title": "Google AI Pro",
-      "slug": "google-ai-pro"
+      "slug": "google-ai-pro",
+      "icon": "sparkle",
+      "url": "https://one.google.com/about/google-ai-plans/"
     },
     {
       "title": "YouTube Premium",
       "memo": "よく観ている。",
-      "slug": "youtube-premium"
+      "slug": "youtube-premium",
+      "icon": "play",
+      "url": "https://www.youtube.com/premium"
     },
     {
       "title": "Netflix",
       "memo": "よく観ている。",
-      "slug": "netflix"
+      "slug": "netflix",
+      "icon": "play",
+      "url": "https://www.netflix.com/jp/"
     },
     {
       "title": "U-NEXT",
       "memo": "契約しているが、観る習慣になっていない。",
-      "slug": "u-next"
+      "slug": "u-next",
+      "icon": "play",
+      "url": "https://video.unext.jp/"
     },
     {
       "title": "Amazon Prime Music",
       "memo": "探さずに流せる。部屋で過ごす時間の背景として。",
-      "slug": "prime-music"
+      "slug": "prime-music",
+      "icon": "music",
+      "url": "https://www.amazon.co.jp/music/prime"
     },
     {
       "title": "Money Forward",
       "memo": "資産を一か所で可視化する。見続けないようにしている。",
-      "slug": "money-forward"
+      "slug": "money-forward",
+      "icon": "chart",
+      "url": "https://moneyforward.com/"
     }
   ],
   "hobby": [
     {
       "title": "トランギア メスティン",
       "memo": "キャンプ用の飯ごう。",
-      "slug": "trangia-mestin"
+      "slug": "trangia-mestin",
+      "icon": "mestin",
+      "url": "https://trangia.se/en/product-category/mess-tins/"
     },
     {
       "title": "ニーモ アトム 2P",
       "memo": "テント。",
-      "slug": "nemo-atom-2p"
+      "slug": "nemo-atom-2p",
+      "icon": "tent",
+      "url": "https://nemoequipment.jp/collections/tent-and-shelters-tents"
     },
     {
       "title": "モンベル ステラリッジ テント1",
       "memo": "テント。",
-      "slug": "stellaridge-1"
+      "slug": "stellaridge-1",
+      "icon": "tent",
+      "url": "https://webshop.montbell.jp/goods/disp_fo.php?product_id=1122648"
     },
     {
       "title": "モンベル アルパイン ダウンハガー 800 #1",
       "memo": "寝袋。",
-      "slug": "downhugger-800"
+      "slug": "downhugger-800",
+      "icon": "sleepbag"
     },
     {
       "title": "ソト フィールドホッパー",
       "memo": "折りたたみのテーブル。",
-      "slug": "field-hopper"
+      "slug": "field-hopper",
+      "icon": "table",
+      "url": "https://soto.shinfuji.co.jp/products/st-630/"
     },
     {
       "title": "RICOH GR III",
       "memo": "カメラ。",
-      "slug": "ricoh-gr3"
+      "slug": "ricoh-gr3",
+      "icon": "camera",
+      "url": "https://www.ricoh-imaging.co.jp/japan/products/gr-3/"
     }
   ],
   "cute": [
     {
       "title": "ハシビロコウのフィギュア",
-      "slug": "shoebill-figure"
+      "slug": "shoebill-figure",
+      "icon": "bird"
     },
     {
       "title": "ハシビロコウのコップ",
-      "slug": "shoebill-cup"
+      "slug": "shoebill-cup",
+      "icon": "cup"
     },
     {
       "title": "小網神社のカエルのお守り",
-      "slug": "koami-frog"
+      "slug": "koami-frog",
+      "icon": "charm",
+      "url": "https://www.koamijinja.or.jp/"
     },
     {
       "title": "ダンボーのフィギュア",
-      "slug": "danboard"
+      "slug": "danboard",
+      "icon": "robot"
     },
     {
       "title": "ルチルの水晶玉",
-      "slug": "rutile-quartz"
+      "slug": "rutile-quartz",
+      "icon": "orb"
     }
   ],
   "places": [
     {
       "title": "鳥の多い公園",
       "memo": "家からすぐ行ける。いまの家を気に入っている理由のひとつ。",
-      "slug": "park"
+      "slug": "park",
+      "icon": "tree"
     },
     {
       "title": "ジムの大きなお風呂",
       "memo": "運動のあとにほどける。人のいる場所にいることも目的のうち。",
-      "slug": "gym-bath"
+      "slug": "gym-bath",
+      "icon": "bath"
     },
     {
       "title": "映画館",
       "memo": "週末に行く。日常から離れて作品に入る時間。",
-      "slug": "cinema"
+      "slug": "cinema",
+      "icon": "film"
     }
   ]
 }
