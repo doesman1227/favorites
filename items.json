@@ -1,259 +1,379 @@
 {
-  "note": "お気に入りのデータ。キーは index.html の data-list と対応。appliances=家電、furniture=家具、tableware=食器、apparel=服、stationery=文房具、digital=デジタルツール、services=サービス、hobby=趣味用品、cute=可愛いもの、places=場所。title が必須。memo・slug・icon・img・url は任意。icon は index.html の <symbol id=\"i-…\"> の名前（washer/pot/tent/camera など）。無いときはカテゴリの既定アイコン、それも無ければ頭文字が出る。img があれば写真が優先。url は公式の商品ページ（http/https のみ）。枠と名前の両方がそのリンクになる。実際に開いて確認が取れたものだけ書く（推測で書かない）。写真は images/_inbox/<slug>.jpg に置いて add_images.py を実行する（images/README.md）。管理パネル http://localhost:8787/favorites からも編集できる。★このファイルは公開リポジトリに入り、誰でも全文を読める。非公開という状態は持たない方針なので、公開していいものだけを書く。見せたくないものはここに書かない。ときめかなくなったら消す。",
-  "appliances": [
+  "note": "モノ（持っているもの・お気に入りのもの・欲しいもの）。build_items.py が書き出す。直すのはあちら。",
+  "items": [
     {
+      "slug": "washer",
       "title": "ドラム式洗濯機",
       "memo": "洗って乾かすまでが一度で終わる。干す工程が消えた。",
-      "slug": "washer",
-      "icon": "washer"
+      "use": "家電",
+      "sub": "洗濯"
     },
     {
+      "slug": "blender",
       "title": "ブレンダー",
       "memo": "準備と片付けが軽いので、使う回数が落ちない。",
-      "slug": "blender",
-      "icon": "blender"
+      "use": "家電",
+      "sub": "調理"
     },
     {
-      "title": "SHARP KN-HW10E-B",
-      "memo": "自動調理鍋。材料を入れて放っておける。ここも手間を引き受けてくれる側。",
       "slug": "hotcook",
-      "icon": "pot",
-      "url": "https://jp.sharp/hotcook/products/knhw10e/"
-    }
-  ],
-  "furniture": [
+      "title": "SHARP KN-HW10E-B",
+      "url": "https://jp.sharp/hotcook/products/knhw10e/",
+      "memo": "自動調理鍋。材料を入れて放っておける。ここも手間を引き受けてくれる側。",
+      "use": "家電",
+      "sub": "調理"
+    },
     {
-      "title": "シモンズのマットレス（シングル）",
-      "memo": "いちばん気に入っている家具。シングルなので、もう少し大きいものに替えたい。",
       "slug": "simmons-mattress",
-      "icon": "bed",
-      "url": "https://www.simmons.co.jp/"
-    }
-  ],
-  "tableware": [
+      "title": "シモンズのマットレス（シングル）",
+      "url": "https://www.simmons.co.jp/",
+      "memo": "いちばん気に入っている家具。シングルなので、もう少し大きいものに替えたい。",
+      "use": "家具",
+      "sub": "寝具"
+    },
     {
+      "slug": "donabe",
       "title": "ご飯を炊く土鍋",
       "memo": "炊飯器ではなく土鍋で炊く。",
-      "slug": "donabe",
-      "icon": "bowl"
-    }
-  ],
-  "apparel": [
+      "use": "食器",
+      "sub": "炊く"
+    },
     {
-      "title": "ジェラートピケのパジャマ",
-      "memo": "着ると調子がいい。肌ざわりで選んでいる。",
       "slug": "gelato-pique-pajamas",
-      "icon": "shirt",
-      "url": "https://gelatopique.com/"
+      "title": "ジェラートピケのパジャマ",
+      "url": "https://gelatopique.com/",
+      "memo": "着ると調子がいい。肌ざわりで選んでいる。",
+      "use": "服",
+      "sub": "部屋着"
     },
     {
-      "title": "UNITED TOKYO の服",
-      "memo": "肌触りのよさで選んだもの。",
       "slug": "united-tokyo",
-      "icon": "hanger",
-      "url": "https://united-tokyo.com/"
+      "title": "UNITED TOKYO の服",
+      "url": "https://united-tokyo.com/",
+      "memo": "肌触りのよさで選んだもの。",
+      "use": "服",
+      "sub": "ふだん着"
     },
     {
+      "slug": "suit-shirt",
       "title": "動きやすいスーツとシャツ",
       "memo": "きちんと見えることと、体が楽であることの両立。",
-      "slug": "suit-shirt",
-      "icon": "shirt"
+      "use": "服",
+      "sub": "きちんとした服"
     },
     {
+      "slug": "running-shoes",
       "title": "歩きやすいランニングシューズ",
       "memo": "よく歩くので、靴は履き心地から選ぶ。",
-      "slug": "running-shoes",
-      "icon": "shoe"
-    }
-  ],
-  "stationery": [
+      "use": "服",
+      "sub": "靴"
+    },
     {
-      "title": "ウォーターマンのボールペン",
-      "memo": "いま使っているペン。",
       "slug": "waterman",
-      "icon": "pen",
-      "url": "https://www.waterman.com/"
-    }
-  ],
-  "digital": [
+      "title": "ウォーターマンのボールペン",
+      "url": "https://www.waterman.com/",
+      "memo": "いま使っているペン。",
+      "use": "文房具",
+      "sub": "ペン"
+    },
     {
-      "title": "iPhone",
       "slug": "iphone",
-      "icon": "phone",
-      "url": "https://www.apple.com/jp/iphone/"
+      "title": "iPhone",
+      "url": "https://www.apple.com/jp/iphone/",
+      "use": "デジタルツール",
+      "sub": "パソコンとスマホ"
     },
     {
-      "title": "Mac",
       "slug": "mac",
-      "icon": "laptop",
-      "url": "https://www.apple.com/jp/mac/"
+      "title": "Mac",
+      "url": "https://www.apple.com/jp/mac/",
+      "use": "デジタルツール",
+      "sub": "パソコンとスマホ"
     },
     {
-      "title": "ロジクールのマウス",
-      "memo": "手に合っている。毎日触るものほど差が出る。",
       "slug": "logicool-mouse",
-      "icon": "mouse",
-      "url": "https://www.logicool.co.jp/ja-jp/shop/c/mice"
+      "title": "ロジクールのマウス",
+      "url": "https://www.logicool.co.jp/ja-jp/shop/c/mice",
+      "memo": "手に合っている。毎日触るものほど差が出る。",
+      "use": "デジタルツール",
+      "sub": "入力機器"
     },
     {
-      "title": "AirPods 4",
-      "memo": "歩きながら聴く、話す。散歩とAIとの対話が習慣なので効く。",
       "slug": "airpods-4",
-      "icon": "earbuds",
-      "url": "https://www.apple.com/jp/airpods/"
+      "title": "AirPods 4",
+      "url": "https://www.apple.com/jp/airpods/",
+      "memo": "歩きながら聴く、話す。散歩とAIとの対話が習慣なので効く。",
+      "use": "デジタルツール",
+      "sub": "音"
     },
     {
-      "title": "Google Fitbit Air",
-      "memo": "身につけるものだが、役割は体の状態を見ること。",
       "slug": "fitbit-air",
-      "icon": "watch",
-      "url": "https://store.google.com/jp/category/watches_trackers?hl=ja"
-    }
-  ],
-  "services": [
+      "title": "Google Fitbit Air",
+      "url": "https://store.google.com/jp/category/watches_trackers?hl=ja",
+      "memo": "身につけるものだが、役割は体の状態を見ること。",
+      "use": "デジタルツール",
+      "sub": "身につけるもの"
+    },
     {
-      "title": "ChatGPT",
       "slug": "chatgpt",
-      "icon": "sparkle",
-      "url": "https://chatgpt.com/"
+      "title": "ChatGPT",
+      "url": "https://chatgpt.com/",
+      "use": "サービス",
+      "sub": "AI"
     },
     {
-      "title": "Claude",
       "slug": "claude",
-      "icon": "sparkle",
-      "url": "https://claude.com/"
+      "title": "Claude",
+      "url": "https://claude.com/",
+      "use": "サービス",
+      "sub": "AI"
     },
     {
-      "title": "Google AI Pro",
       "slug": "google-ai-pro",
-      "icon": "sparkle",
-      "url": "https://one.google.com/about/google-ai-plans/"
+      "title": "Google AI Pro",
+      "url": "https://one.google.com/about/google-ai-plans/",
+      "use": "サービス",
+      "sub": "AI"
     },
     {
-      "title": "YouTube Premium",
-      "memo": "よく観ている。",
       "slug": "youtube-premium",
-      "icon": "play",
-      "url": "https://www.youtube.com/premium"
-    },
-    {
-      "title": "Netflix",
+      "title": "YouTube Premium",
+      "url": "https://www.youtube.com/premium",
       "memo": "よく観ている。",
+      "use": "サービス",
+      "sub": "動画"
+    },
+    {
       "slug": "netflix",
-      "icon": "play",
-      "url": "https://www.netflix.com/jp/"
+      "title": "Netflix",
+      "url": "https://www.netflix.com/jp/",
+      "memo": "よく観ている。",
+      "use": "サービス",
+      "sub": "動画"
     },
     {
-      "title": "U-NEXT",
-      "memo": "契約しているが、観る習慣になっていない。",
       "slug": "u-next",
-      "icon": "play",
-      "url": "https://video.unext.jp/"
+      "title": "U-NEXT",
+      "url": "https://video.unext.jp/",
+      "memo": "契約しているが、観る習慣になっていない。",
+      "use": "サービス",
+      "sub": "動画"
     },
     {
-      "title": "Amazon Prime Music",
-      "memo": "探さずに流せる。部屋で過ごす時間の背景として。",
       "slug": "prime-music",
-      "icon": "music",
-      "url": "https://www.amazon.co.jp/music/prime"
+      "title": "Amazon Prime Music",
+      "url": "https://www.amazon.co.jp/music/prime",
+      "memo": "探さずに流せる。部屋で過ごす時間の背景として。",
+      "use": "サービス",
+      "sub": "音楽"
     },
     {
-      "title": "Money Forward",
-      "memo": "資産を一か所で可視化する。見続けないようにしている。",
       "slug": "money-forward",
-      "icon": "chart",
-      "url": "https://moneyforward.com/"
-    }
-  ],
-  "hobby": [
+      "title": "Money Forward",
+      "url": "https://moneyforward.com/",
+      "memo": "資産を一か所で可視化する。見続けないようにしている。",
+      "use": "サービス",
+      "sub": "おかね"
+    },
     {
-      "title": "トランギア メスティン",
-      "memo": "キャンプ用の飯ごう。",
       "slug": "trangia-mestin",
-      "icon": "mestin",
-      "url": "https://trangia.se/en/product-category/mess-tins/"
+      "title": "トランギア メスティン",
+      "url": "https://trangia.se/en/product-category/mess-tins/",
+      "memo": "キャンプ用の飯ごう。",
+      "use": "趣味用品",
+      "sub": "キャンプ道具"
     },
     {
-      "title": "ニーモ アトム 2P",
-      "memo": "テント。",
       "slug": "nemo-atom-2p",
-      "icon": "tent",
-      "url": "https://nemoequipment.jp/collections/tent-and-shelters-tents"
-    },
-    {
-      "title": "モンベル ステラリッジ テント1",
+      "title": "ニーモ アトム 2P",
+      "url": "https://nemoequipment.jp/collections/tent-and-shelters-tents",
       "memo": "テント。",
-      "slug": "stellaridge-1",
-      "icon": "tent",
-      "url": "https://webshop.montbell.jp/goods/disp_fo.php?product_id=1122648"
+      "use": "趣味用品",
+      "sub": "キャンプ道具"
     },
     {
+      "slug": "stellaridge-1",
+      "title": "モンベル ステラリッジ テント1",
+      "url": "https://webshop.montbell.jp/goods/disp_fo.php?product_id=1122648",
+      "memo": "テント。",
+      "use": "趣味用品",
+      "sub": "キャンプ道具"
+    },
+    {
+      "slug": "downhugger-800",
       "title": "モンベル アルパイン ダウンハガー 800 #1",
       "memo": "寝袋。",
-      "slug": "downhugger-800",
-      "icon": "sleepbag"
+      "use": "趣味用品",
+      "sub": "キャンプ道具"
     },
     {
-      "title": "ソト フィールドホッパー",
-      "memo": "折りたたみのテーブル。",
       "slug": "field-hopper",
-      "icon": "table",
-      "url": "https://soto.shinfuji.co.jp/products/st-630/"
+      "title": "ソト フィールドホッパー",
+      "url": "https://soto.shinfuji.co.jp/products/st-630/",
+      "memo": "折りたたみのテーブル。",
+      "use": "趣味用品",
+      "sub": "キャンプ道具"
     },
     {
-      "title": "RICOH GR III",
-      "memo": "カメラ。",
       "slug": "ricoh-gr3",
-      "icon": "camera",
-      "url": "https://www.ricoh-imaging.co.jp/japan/products/gr-3/"
-    }
-  ],
-  "cute": [
+      "title": "RICOH GR III",
+      "url": "https://www.ricoh-imaging.co.jp/japan/products/gr-3/",
+      "memo": "カメラ。",
+      "use": "趣味用品",
+      "sub": "カメラ"
+    },
     {
-      "title": "ハシビロコウのフィギュア",
       "slug": "shoebill-figure",
-      "icon": "bird"
+      "title": "ハシビロコウのフィギュア",
+      "use": "可愛いもの",
+      "sub": "ハシビロコウ"
     },
     {
-      "title": "ハシビロコウのコップ",
       "slug": "shoebill-cup",
-      "icon": "cup"
+      "title": "ハシビロコウのコップ",
+      "use": "可愛いもの",
+      "sub": "ハシビロコウ"
     },
     {
-      "title": "小網神社のカエルのお守り",
       "slug": "koami-frog",
-      "icon": "charm",
-      "url": "https://www.koamijinja.or.jp/"
+      "title": "小網神社のカエルのお守り",
+      "url": "https://www.koamijinja.or.jp/",
+      "use": "可愛いもの",
+      "sub": "お守りと置物"
     },
     {
-      "title": "ダンボーのフィギュア",
       "slug": "danboard",
-      "icon": "robot"
+      "title": "ダンボーのフィギュア",
+      "use": "可愛いもの",
+      "sub": "お守りと置物"
     },
     {
-      "title": "ルチルの水晶玉",
       "slug": "rutile-quartz",
-      "icon": "orb"
+      "title": "ルチルの水晶玉",
+      "use": "可愛いもの",
+      "sub": "お守りと置物"
     }
   ],
-  "places": [
+  "wants": [
     {
-      "title": "鳥の多い公園",
-      "memo": "家からすぐ行ける。いまの家を気に入っている理由のひとつ。",
-      "slug": "park",
-      "icon": "tree"
+      "slug": "dual-monitor",
+      "title": "デュアルモニタ",
+      "note": "PCの画面を2枚に",
+      "memo": "広く見渡しながら、考えたり作ったりしたい。",
+      "use": "デジタルツール",
+      "sub": "モニタ"
     },
     {
-      "title": "ジムの大きなお風呂",
-      "memo": "運動のあとにほどける。人のいる場所にいることも目的のうち。",
-      "slug": "gym-bath",
-      "icon": "bath"
-    },
-    {
-      "title": "映画館",
-      "memo": "週末に行く。日常から離れて作品に入る時間。",
-      "slug": "cinema",
-      "icon": "film"
+      "slug": "smart-glasses",
+      "title": "スマートグラス",
+      "memo": "目の前の景色に、情報や記録が重なる体験をしてみたい。",
+      "use": "デジタルツール",
+      "sub": "身につけるもの"
     }
-  ]
+  ],
+  "uses": [
+    {
+      "name": "家電",
+      "en": "APPLIANCES",
+      "icon": "washer",
+      "ref": "",
+      "subs": [
+        "洗濯",
+        "調理"
+      ],
+      "n": 3
+    },
+    {
+      "name": "家具",
+      "en": "FURNITURE",
+      "icon": "bed",
+      "ref": "",
+      "subs": [
+        "寝具"
+      ],
+      "n": 1
+    },
+    {
+      "name": "食器",
+      "en": "TABLEWARE",
+      "icon": "bowl",
+      "ref": "",
+      "subs": [
+        "炊く"
+      ],
+      "n": 1
+    },
+    {
+      "name": "服",
+      "en": "APPAREL",
+      "icon": "shirt",
+      "ref": "",
+      "subs": [
+        "部屋着",
+        "ふだん着",
+        "きちんとした服",
+        "靴"
+      ],
+      "n": 4
+    },
+    {
+      "name": "文房具",
+      "en": "STATIONERY",
+      "icon": "pen",
+      "ref": "",
+      "subs": [
+        "ペン"
+      ],
+      "n": 1
+    },
+    {
+      "name": "デジタルツール",
+      "en": "DIGITAL",
+      "icon": "laptop",
+      "ref": "",
+      "subs": [
+        "パソコンとスマホ",
+        "入力機器",
+        "音",
+        "身につけるもの"
+      ],
+      "n": 5
+    },
+    {
+      "name": "サービス",
+      "en": "SERVICES",
+      "icon": "sparkle",
+      "ref": "",
+      "subs": [
+        "AI",
+        "動画",
+        "音楽",
+        "おかね"
+      ],
+      "n": 8
+    },
+    {
+      "name": "趣味用品",
+      "en": "HOBBY",
+      "icon": "tent",
+      "ref": "",
+      "subs": [
+        "キャンプ道具",
+        "カメラ"
+      ],
+      "n": 6
+    },
+    {
+      "name": "可愛いもの",
+      "en": "CUTE",
+      "icon": "bird",
+      "ref": "",
+      "subs": [
+        "ハシビロコウ",
+        "お守りと置物"
+      ],
+      "n": 5
+    }
+  ],
+  "left": ""
 }

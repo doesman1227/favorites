@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""images/_inbox/ に置いた写真を、正方形に整えて images/ へ入れ、items.json に反映する。
+"""images/_inbox/ に置いた写真を、正方形に整えて images/ へ入れる。
 
 使い方:
     1. 写真を images/_inbox/<slug>.jpg（または .png / .heic など）に置く
-       slug は items.json の各項目の "slug"。`python3 add_images.py --list` で一覧が出る。
+       slug は build_items.py の ROWS / WANTS の一列目。`--list` で一覧が出る。
     2. python3 add_images.py
-    3. 取り込んだ写真は images/<slug>.jpg になり、items.json の img が設定される。
+    3. 取り込んだ写真は images/<slug>.jpg になる。
+    4. python3 build_items.py で items.json に反映される。
+
+items.json は build_items.py の生成物なので、このスクリプトは書き換えない。
+写真があるかどうかは images/<slug>.jpg が在るかどうかで決まる。
 
 macOS の sips だけを使う（追加インストール不要）。
 """
@@ -25,10 +29,9 @@ def load():
 
 
 def all_items(d):
-    for key, v in d.items():
-        if key == "note":
-            continue
-        for it in v:
+    """生成された items.json から、写真を付けられる行をすべて返す。"""
+    for key in ("items", "wants"):
+        for it in d.get(key, []):
             yield key, it
 
 
@@ -89,13 +92,8 @@ def main():
             continue
         dst = os.path.join(IMAGES, slug + ".jpg")
         normalize(os.path.join(INBOX, f), dst)
-        by_slug[slug][1]["img"] = f"images/{slug}.jpg"
         os.remove(os.path.join(INBOX, f))
         done.append(slug)
-
-    with open(ITEMS, "w", encoding="utf-8") as fh:
-        json.dump(d, fh, ensure_ascii=False, indent=2)
-        fh.write("\n")
 
     for s in done:
         print(f"  取り込み: images/{s}.jpg  ({by_slug[s][1]['title']})")
@@ -103,6 +101,7 @@ def main():
         print(f"  ★ slug が一致しません: {f}  → --list で確認してください")
     print(f"\n取り込み {len(done)} 件 / 残り {len(unknown)} 件")
     if done:
+        print("\n次に python3 build_items.py を走らせると items.json に反映されます。")
         print("確認したら git add -A && git commit && git push で公開されます。")
 
 
